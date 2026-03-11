@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+      emailjs.init("RNjdbGZFWcE2WiWIX");
+    });
+  </script>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Portfolio</div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contacts">Contact</a></li>
+      </ul>
+    </div>
+    <button id="theme-toggle" title="Toggle light/dark mode">&#9790;</button>
+  </nav>
+
+  <section id="home">
+    <div class="photo-circle"><img src="myphoto.jpg" alt="My Photo" /></div>
+    <div class="home-text">
+      <h1>Hi, I'm <span>Shaira</span></h1>
+      <div class="typing-line" id="typing"></div>
+      <p>I'm passionate about building clean and functional websites. Always eager to learn, grow, and create meaningful digital experiences.</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/shaira.jacobe.16" target="_blank" title="Facebook">f</a>
+        <a href="https://www.instagram.com/ur.girly_shai" target="_blank" title="Instagram">ig</a>
+      </div>
+      <a href="#contacts" class="hire-btn">Hire Me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-header"><h2>About Me</h2></div>
+    <div class="about-inner">
+      <div class="about-photo"><img src="yourphoto.jpg" alt="Your Photo" /></div>
+      <div class="about-text">
+        <h3>Who am I?</h3>
+        <p>Hi! I'm Shaira Mae Jacobe, a Computer Science student who enjoys creating websites and solving problems through code.</p>
+        <p>I specialize in frontend development and have a strong eye for clean, simple design. Outside coding, I enjoy gaming, watching tech content, and exploring new tools.</p>
+        <p>My goal is to keep growing as a developer and build meaningful projects that make a difference.</p>
+        <div class="skills">
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">Git</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-header"><h2>My Projects</h2></div>
+    <div class="projects-grid">
+      <div class="card" onclick="openLightbox('project1.jpg', 'SCRAPBOOK')">
+        <div class="card-thumb"><img src="project1.jpg" alt="Project 1" /></div>
+        <div class="card-body"><h3>SCRAPBOOK</h3><p>A personal scrapbook combining photos, quotes, and decorative elements to express my identity, family, and beliefs.</p></div>
+      </div>
+      <div class="card" onclick="openLightbox('project2.jpg', 'LAFVIN 2WD SMART ROBOT CAR')">
+        <div class="card-thumb"><img src="project2.jpg" alt="Project 2" /></div>
+        <div class="card-body"><h3>LAFVIN 2WD SMART ROBOT CAR</h3><p>A robotic car with four wheels, ultrasonic sensor for obstacle detection, and LED lights connected to a microcontroller.</p></div>
+      </div>
+      <div class="card" onclick="openVideo('pitching.mp4', 'PITCHING')">
+        <div class="card-thumb"><img src="project3.jpg" alt="Project 3" /></div>
+        <div class="card-body"><h3>PITCHING</h3><p>A school project pitch presentation where our team proposed a business idea, outlined its purpose, target audience, and potential impact to a panel of evaluators.</p></div>
+      </div>
+      <div class="card" onclick="openGallery()">
+        <div class="card-thumb"><img src="project4.jpg" alt="Project 4" /></div>
+        <div class="card-body"><h3>BROCHURE</h3><p>A luxury watch brochure with product images, descriptions, key features, and pricing in a clean, colorful layout.</p></div>
+      </div>
+      <div class="card" onclick="openLightbox('project5.jpg', 'LIBRARY MANAGEMENT SYSTEM')">
+        <div class="card-thumb"><img src="project5.jpg" alt="Project 5" /></div>
+        <div class="card-body"><h3>LIBRARY MANAGEMENT SYSTEM</h3><p>A Java Swing Student Form app using JDBC with MySQL via XAMPP to store and display student records.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <span id="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
+    <video id="lightbox-video" controls onclick="event.stopPropagation()"></video>
+    <p id="lightbox-caption"></p>
+    <div id="gallery-controls" onclick="event.stopPropagation()">
+      <button id="gallery-prev" onclick="galleryNav(-1)">&#10094;</button>
+      <span id="gallery-counter"></span>
+      <button id="gallery-next" onclick="galleryNav(1)">&#10095;</button>
+    </div>
+  </div>
+
+  <section id="contacts">
+    <div class="sec-header"><h2>Contact Me</h2></div>
+    <div class="contacts-inner">
+      <div>
+        <p class="contact-intro">Feel free to reach out through any of my social media accounts or send me a message using the form.</p>
+        <div class="contact-links">
+          <a href="https://www.facebook.com/shaira.jacobe.16" target="_blank" class="contact-item">
+            <span class="ci-icon">&#128216;</span>
+            <div><span class="ci-label">Facebook</span><span class="ci-value">Shaira Jacobe</span></div>
+          </a>
+          <a href="https://www.instagram.com/ur.girly_shai" target="_blank" class="contact-item">
+            <span class="ci-icon">&#128247;</span>
+            <div><span class="ci-label">Instagram</span><span class="ci-value">@ur.girly_shai</span></div>
+          </a>
+          <a href="tel:+639551546021" class="contact-item">
+            <span class="ci-icon">&#128222;</span>
+            <div><span class="ci-label">Phone Number</span><span class="ci-value">+63 955 1546 021</span></div>
+          </a>
+          <a href="mailto:shairajacobe78@gmail.com" class="contact-item">
+            <span class="ci-icon">&#9993;</span>
+            <div><span class="ci-label">Gmail</span><span class="ci-value">shairajacobe78@gmail.com</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="form">
+        <div><label>Name</label><input type="text" id="name" placeholder="Your full name" /></div>
+        <div><label>Email</label><input type="email" id="email" placeholder="your@email.com" /></div>
+        <div><label>Message</label><textarea id="message" placeholder="Write your message here..."></textarea></div>
+        <div id="form-status" style="font-size:0.85rem; min-height:1.2em;"></div>
+        <button class="hire-btn" id="send-btn">Send Message</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 My Portfolio &nbsp;|&nbsp; Made with HTML, CSS &amp; JavaScript</p>
+  </footer>
+
+  <script src="portfolio.js?v=3"></script>
+</body>
+</html>
